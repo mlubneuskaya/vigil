@@ -4,9 +4,11 @@ from pathlib import Path
 
 CATEGORIES = ['cars', 'clothes', 'consumer_goods', 'electronics', 'furniture']
 HALLUCINATION_TYPES = ['objects', 'background', 'object_omission']
+
+# complete paths before running
 DATA_DIR = Path("./data") 
 MODELS = ['qwen', 'gemini', 'gemma'] 
-GT_SUFFIX = "final"
+GT_SUFFIX = ""
 
 def calculate_all_metrics(tp, fp, fn):
     """Counts Precision, Recall and F1 from raw TP/FP/FN."""
@@ -43,7 +45,7 @@ def run_comparison_report():
             pred_path = DATA_DIR / cat / f'annotations_{cat}_baseline_{model_name}.json'
             
             if not gt_path.exists() or not pred_path.exists():
-                print(f"⚠️  Missing files for {model_name} in category {cat}. Skipping.")
+                print(f"Missing files for {model_name} in category {cat}. Skipping.")
                 continue
 
             with open(gt_path, 'r', encoding='utf-8') as f: gt_d = json.load(f)
