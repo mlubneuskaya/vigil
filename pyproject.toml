@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_project_name"
+version = "0.1.0"
+description = "My project description"
+
+[tool.setuptools.packages.find]
+where = ["src"]
