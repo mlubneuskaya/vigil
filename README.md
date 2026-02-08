@@ -2,7 +2,7 @@
 
 # VIGIL: Tackling Hallucination Detection in Image Recontextualization
 
-Joanna Wojciechowicz*, Maria Łubniewska*, Jakub Antczak*, Justyna Baczyńska*, Wojciech Gromski*, Wojciech Kozłowski, Maciej Zięba <br>
+Joanna Wojciechowicz*, Maria Łubniewska*, Jakub Antczak*, Justyna Baczyńska*, Wojciech Gromski*, <br> Wojciech Kozłowski, Maciej Zięba <br>
 (* denotes equal contribution)
 
 Wroclaw University of Science and Technology
@@ -93,3 +93,4 @@ python3 main.py --config configs/example_experiment.yaml
 
 - Results are saved in the `outputs/` directory.
 - Logs are in `outputs/logs/`.
+
