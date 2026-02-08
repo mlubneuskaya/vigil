@@ -1,4 +1,21 @@
-# Auto-QA Pipeline: Quick Start Guide
+<div align="center">
+
+# VIGIL: Tackling Hallucination Detection in Image Recontextualization
+
+Joanna Wojciechowicz*, Maria Łubniewska*, Jakub Antczak*, Justyna Baczyńska*, Wojciech Gromski*, Wojciech Kozłowski, Maciej Zięba <br>
+(* denotes equal contribution)
+
+Wroclaw University of Science and Technology
+
+</div>
+
+![Diagram](assets/diagram.png)
+
+**Abstract:** We introduce VIGIL (**V**isual **I**nconsistency & **G**enerative **I**n-context **L**ucidity), the first benchmark dataset and framework providing a fine-grained categorization of hallucinations in the multimodal image recontextualization task for large multimodal models (LMMs). While existing research often treats hallucinations as a uniform issue, our work addresses a significant gap in multimodal evaluation by decomposing these errors into five categories: pasted object hallucinations, background hallucinations, object omission, positional & logical inconsistencies, and physical law violations. To address these complexities, we propose a multi-stage detection pipeline. Our architecture processes recontextualized images through a series of specialized steps targeting object-level fidelity, background consistency, and omission detection, leveraging a coordinated ensemble of open-source models, whose effectiveness is demonstrated through extensive experimental evaluations. Our approach enables a deeper understanding of where the models fail with an explanation; thus, we fill a gap in the field, as no prior methods offer such categorization and decomposition for this task. To promote transparency and further exploration, we openly release VIGIL, along with the detection pipeline and benchmark code, through our GitHub repository: https://github.com/mlubneuskaya/vigil and Data repository: https://huggingface.co/datasets/joannaww/VIGIL.
+
+---
+
+# VIGIL Pipeline: Quick Start Guide
 
 ## 1. Python Environment Setup
 
