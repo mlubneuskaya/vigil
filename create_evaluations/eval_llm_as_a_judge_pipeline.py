@@ -155,7 +155,7 @@ def run_eval():
             'r': sum(m['r'] for m in m_list)/3
         }
 
-    # RAPORT TXT (Z Twoją strukturą 4+1)
+    # REPORT TXT 
     report_path = f"REPORT_PIPELINE_NEW_{args.suffix}.txt"
     with open(report_path, "w") as f:
         f.write(f"PIPELINE REPORT: {args.suffix}\n{'='*100}\n")
@@ -170,7 +170,7 @@ def run_eval():
                 r = cat_results[cat]
                 f.write(f"{cat.upper():<20} | {r['p']:<8.4f} | {r['r']:<8.4f} | {r['f1']:<12.4f} | {excl_f1:<12.4f}\n")
 
-    # Zapis szczegółów do CSV
+    # Save details to csv
     pd.DataFrame(detailed_rows).to_csv(f"DETAILS_PIPELINE_NEW_{args.suffix}.csv", index=False)
 
 if __name__ == "__main__":
