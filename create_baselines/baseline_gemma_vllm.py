@@ -130,7 +130,8 @@ def main():
         max_model_len=16384, 
         limit_mm_per_prompt={"image": 4},
     )
-
+    
+    # complete paths before running
     DATASETS = [
         {"input": "", 
          "data_dir": "", 
