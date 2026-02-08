@@ -146,6 +146,7 @@ def process_dataset(dataset_info):
             json.dump(results, f, indent=4, ensure_ascii=False)
 
 def main():
+    # complete paths before running
     DATASETS = [
         {
             "input": "",
