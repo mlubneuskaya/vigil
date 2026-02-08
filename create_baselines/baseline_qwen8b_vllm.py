@@ -140,6 +140,7 @@ def main():
         limit_mm_per_prompt={"image": 4}, 
     )
 
+    # complete paths before running
     DATASETS = [
         {"input": "", 
          "data_dir": "", 
