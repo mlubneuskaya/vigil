@@ -5,6 +5,7 @@ from tqdm import tqdm
 
 CATEGORIES = ['cars', 'clothes', 'consumer_goods', 'electronics', 'furniture']
 HALLUCINATION_TYPES = ['objects', 'background', 'object_omission']
+# complete paths before running
 DATA_DIR = Path("")
 OUTPUTS_BASE = Path("")
 GT_SUFFIX = ""
