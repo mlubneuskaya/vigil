@@ -51,11 +51,11 @@ output_dir: outputs/example_run/
 
 data_root: []
 data_ids:
-  "data/consumer_goods/outputs":
+  "data/consumer_goods/data":
     - "0001"
     - "0002"
   
-  "data/furniture/outputs":
+  "data/furniture/data":
     - "0001"
     - "0002"
 
@@ -93,4 +93,5 @@ python3 main.py --config configs/example_experiment.yaml
 
 - Results are saved in the `outputs/` directory.
 - Logs are in `outputs/logs/`.
+
 
