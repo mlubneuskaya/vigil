@@ -145,6 +145,11 @@ h2.title{font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:700;margin-bottom:14px
 .bubble.good .label{color:var(--accent-2)}
 .bubble p{color:var(--txt)}
 .quote{font-size:1.18rem;font-style:italic;color:var(--ink2)}
+.bubble-imgs{display:flex;gap:10px;margin-bottom:16px}
+.bubble-imgs img{width:50%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#fff}
+.bubble-one{margin-bottom:16px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.bubble-one img{display:block;width:100%;height:auto}
+.subtitle{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:700;color:var(--txt);margin:46px 0 16px}
 
 /* gap score */
 .score-old{display:inline-flex;align-items:baseline;gap:6px;font-family:var(--sg)}
@@ -212,8 +217,7 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-s
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
 
-/* i18n visibility handled via JS textContent swap; helper for block-level alt */
-[data-pl]{}
+/* i18n: text swapped via JS textContent based on data-pl / data-en */
 </style>
 </head>
 <body>
@@ -266,15 +270,21 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-s
     <p class="lead reveal t" data-pl="Rekontekstualizacja obrazu — umieszczanie obiektów referencyjnych w zadanej scenie zgodnie z multimodalnym promptem — to dziś podstawowa zdolność modeli generatywnych. Czy jednak można im ufać?" data-en="Image recontextualization — placing reference objects into a target scene under a multimodal prompt — is now a core capability of generative models. But can we trust them?">Rekontekstualizacja obrazu — umieszczanie obiektów referencyjnych w zadanej scenie zgodnie z multimodalnym promptem — to dziś podstawowa zdolność modeli generatywnych. Czy jednak można im ufać?</p>
     <div class="compare reveal" style="margin-top:34px">
       <div class="bubble">
+        <div class="bubble-imgs">
+          <img src="0002object1.png" alt="Obiekt referencyjny 1" loading="lazy">
+          <img src="0002object2.png" alt="Obiekt referencyjny 2" loading="lazy">
+        </div>
         <div class="label t" data-pl="Polecenie" data-en="Prompt">Polecenie</div>
-        <p class="quote t" data-pl="„Umieść drewniane krzesło w salonie ze zdjęcia referencyjnego."" data-en="&quot;Place the wooden chair in the living room from the reference photo.&quot;">„Umieść drewniane krzesło w salonie ze zdjęcia referencyjnego."</p>
+        <p class="quote t" data-pl="„Umieść drewniane krzesło oraz fotel w salonie ze zdjęcia referencyjnego."" data-en="&quot;Place the wooden chair and the sofa in the living room from the reference photo.&quot;">„Umieść drewniane krzesło w salonie ze zdjęcia referencyjnego."</p>
       </div>
       <div class="arrow">→</div>
       <div class="bubble bad">
+        <div class="bubble-one"><img src="0002generated.png" alt="Wynik modelu" loading="lazy"></div>
         <div class="label t" data-pl="Wynik modelu" data-en="Model output">Wynik modelu</div>
-        <p class="t" data-pl="Wygenerowany fotel bujany zamiast krzesła, a tło sklejone z dwóch różnych pomieszczeń." data-en="A rocking armchair instead of the chair, and a background stitched from two different rooms.">Wygenerowany fotel bujany zamiast krzesła, a tło sklejone z dwóch różnych pomieszczeń.</p>
+        <p class="t" data-pl="Wygenerowany fotel bujany zamiast krzesła oraz fotel zamieniony w bujany." data-en="A rocking armchair instead of the chair and the sofa replaced with a rocking one.">Wygenerowany fotel bujany zamiast krzesła oraz fotel zamieniony w bujany.</p>
       </div>
     </div>
+    <h3 class="subtitle reveal t" data-pl="Dla kogo." data-en="Who is it for?">Dla kogo.</h3>
     <div class="grid g2 reveal" style="margin-top:22px">
       <div class="card">
         <h3 class="t" data-pl="Firmy" data-en="Companies">Firmy</h3>
@@ -324,9 +334,10 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-s
         <p class="t" data-pl="ustrukturyzowany opis błędu: mutacja obiektu · przenikanie cech · złe umiejscowienie · błędy fizyki · mutacja tła · pominięcie" data-en="structured error description: object mutation · feature bleeding · misplacement · physics errors · background mutation · omission">ustrukturyzowany opis błędu: mutacja obiektu · przenikanie cech · złe umiejscowienie · błędy fizyki · mutacja tła · pominięcie</p>
       </div>
     </div>
+    <h3 class="subtitle reveal t" data-pl="Z czego składa się VIGIL?" data-en="What VIGIL is made of?">Z czego składa się VIGIL?</h3>
     <div class="grid g3 reveal" style="margin-top:24px">
-      <div class="card"><div class="num">01</div><h3 class="t" data-pl="Zbiór danych" data-en="Dataset">Zbiór danych</h3><p class="t" data-pl="Ręcznie anotowany benchmark." data-en="A manually annotated benchmark.">Ręcznie anotowany benchmark.</p></div>
-      <div class="card"><div class="num">02</div><h3 class="t" data-pl="Taksonomia" data-en="Taxonomy">Taksonomia</h3><p class="t" data-pl="Pięć kategorii błędów." data-en="Five categories of errors.">Pięć kategorii błędów.</p></div>
+      <div class="card"><div class="num">01</div><h3 class="t" data-pl="Taksonomia" data-en="Taxonomy">Taksonomia</h3><p class="t" data-pl="Pięć kategorii błędów." data-en="Five categories of errors.">Pięć kategorii błędów.</p></div>
+      <div class="card"><div class="num">02</div><h3 class="t" data-pl="Zbiór danych" data-en="Dataset">Zbiór danych</h3><p class="t" data-pl="Ręcznie anotowany benchmark." data-en="A manually annotated benchmark.">Ręcznie anotowany benchmark.</p></div>
       <div class="card"><div class="num">03</div><h3 class="t" data-pl="System detekcji" data-en="Detection system">System detekcji</h3><p class="t" data-pl="Modularny, wieloetapowy potok." data-en="A modular multi-stage pipeline.">Modularny, wieloetapowy potok.</p></div>
     </div>
   </div>
